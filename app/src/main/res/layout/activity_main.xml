@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/almostblack"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText"
+    tools:context=".MainActivity">
+
+    <!--  Tempat Hasil dan Tempat Pengerjaan  -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/workingsTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLines="1"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="@color/result"
+            android:textSize="35sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/outputTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLines="1"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="@color/orange"
+            android:textSize="50sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/workingsTV" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/ic_hapus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+    <!--NumPad / Tombol Angka Dan -->
+    <LinearLayout
+        style="@style/buttonRow">
+
+        <ImageButton
+            android:id="@+id/btnHistory"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_hitory" />
+
+        <Button
+            android:id="@+id/btnSimpan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@null"
+            android:text="- Simpan Data -"
+            android:textAllCaps="false"
+            android:textColor="@color/green"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnBackspace"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:textColor="@color/red"
+            android:textSize="25sp"
+            android:text="⌫"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+
+        <Button
+            android:id="@+id/btnClear"
+            style="@style/buttonOperator"
+            android:text="C" />
+
+        <Button
+            android:id="@+id/btnKurung"
+            style="@style/buttonOperator"
+            android:text="( )" />
+
+        <Button
+            android:id="@+id/btnPersen"
+            style="@style/buttonOperator"
+            android:text="%"/>
+
+        <Button
+            android:id="@+id/btnBagi"
+            style="@style/buttonOperator"
+            android:text="÷" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+
+        <Button
+            android:id="@+id/btn9"
+            style="@style/buttonNumber"
+            android:text="9"/>
+        <Button
+            android:id="@+id/btn8"
+            style="@style/buttonNumber"
+            android:text="8"/>
+        <Button
+            android:id="@+id/btn7"
+            style="@style/buttonNumber"
+            android:text="7" />
+        <Button
+            android:id="@+id/btnKali"
+            style="@style/buttonOperator"
+            android:text="×"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+
+        <Button
+            android:id="@+id/btn6"
+            style="@style/buttonNumber"
+            android:text="6" />
+        <Button
+            android:id="@+id/btn5"
+            style="@style/buttonNumber"
+            android:text="5"/>
+        <Button
+            android:id="@+id/btn4"
+            style="@style/buttonNumber"
+            android:text="4" />
+        <Button
+            android:id="@+id/btnKurang"
+            style="@style/buttonOperator"
+            android:text="-"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+
+        <Button
+            android:id="@+id/btn3"
+            style="@style/buttonNumber"
+            android:text="3" />
+        <Button
+            android:id="@+id/btn2"
+            style="@style/buttonNumber"
+            android:text="2"/>
+        <Button
+            android:id="@+id/btn1"
+            style="@style/buttonNumber"
+            android:text="1" />
+        <Button
+            android:id="@+id/btnTambah"
+            style="@style/buttonOperator"
+            android:text="+"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/buttonRow">
+
+        <Button
+            android:id="@+id/btn0"
+            style="@style/buttonNumber"
+            android:text="0"/>
+        <Button
+            android:id="@+id/btnTitik"
+            style="@style/buttonNumber"
+            android:text="." />
+        <Button
+            android:id="@+id/btnEquals"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:textSize="25sp"
+            android:background="@color/orange"
+            android:textColor="@color/white"
+            android:text="="
+            style="?android:attr/buttonBarButtonStyle" />
+    </LinearLayout>
+
+</LinearLayout>
